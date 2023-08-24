@@ -17,4 +17,11 @@ public class Calculator {
     public double multiply(double a, double b) {
         return a * b;
     }
+
+    public double divide(double dividend, double divisor) {
+        if (divisor == 0) {
+            throw new ArithmeticException("Division by zero is not allowed!");
+        }
+        return dividend / divisor;
+    }
 }
