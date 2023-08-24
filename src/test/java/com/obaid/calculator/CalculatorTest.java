@@ -12,14 +12,13 @@ public class CalculatorTest {
         calculator = new Calculator();
     }
     @Test
-    public void Add(){
+    public void testAddingTwoPositiveNumbersReturnsCorrectSum(){
         double result = calculator.add(2, 3);
         assertThat(result).isEqualTo(5);
     }
-
-
+    
     @Test
-    public void Subtract(){
+    public void testSubtractingPositiveNumbersReturnsCorrectDifference(){
         double result = calculator.subtract(5, 2);
         assertThat(result).isEqualTo(3);
     }

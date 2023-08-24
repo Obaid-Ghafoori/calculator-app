@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Calculator {
-
     public double add(double valueA, double valueB) {
     return valueA + valueB;
     }
