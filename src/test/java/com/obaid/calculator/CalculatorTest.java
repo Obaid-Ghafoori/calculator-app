@@ -1,10 +1,12 @@
 package com.obaid.calculator;
 
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 public class CalculatorTest {
     Calculator calculator;
@@ -13,7 +15,6 @@ public class CalculatorTest {
     public void setUp() {
         calculator = new Calculator();
     }
-
 
     @ParameterizedTest
     @CsvSource({"3,2,5", "8,2,10", "1,0,1", "1 ,-2, -1", "-1,-1,-2"})
@@ -35,6 +36,19 @@ public class CalculatorTest {
     public void testMultiplicationReturnsCorrectResult(double a, double b, double expectedSum) {
         double result = calculator.multiply(a, b);
         assertThat(result).isEqualTo(expectedSum);
+    }
+
+    @Test
+    public void testDivisionReturnCorrectResult() {
+        double result = calculator.divide(4, 2);
+        assertThat(result).isEqualTo(2);
+    }
+
+    @Test
+    public void testDivisionByZeroThrowsArithmeticException() {
+        assertThatThrownBy(() -> calculator.divide(4, 0))
+                .isInstanceOf(ArithmeticException.class)
+                .hasMessage("Division by zero is not allowed!");
     }
 
 }
