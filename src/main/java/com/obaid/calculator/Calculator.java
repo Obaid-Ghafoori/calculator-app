@@ -7,10 +7,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Calculator {
     public double add(double valueA, double valueB) {
-    return valueA + valueB;
+        return valueA + valueB;
     }
 
     public double subtract(double valueA, double valueB) {
         return valueA - valueB;
+    }
+
+    public double multiply(double a, double b) {
+        return a * b;
     }
 }
