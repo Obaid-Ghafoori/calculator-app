@@ -27,3 +27,7 @@ Thumbs.db
 # Gradle files
 .gradle/
 build/
+
+#ToDos
+TODO.*
+todo.*
